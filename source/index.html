@@ -65,7 +65,7 @@ $app->get('/', function () {
 
 // Extend the behaviour of the application with some middlewares
 $stack = (new Stack\Builder())
-    ->push('Stack\Logger', new Monolog\Logger('app'))
+    ->push('Stack\Session')
     ->push('Symfony\Component\HttpKernel\HttpCache\HttpCache', new Store(__DIR__.'/cache'));
 $app = $stack->resolve($app);
 
