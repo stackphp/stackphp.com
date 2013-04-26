@@ -5,4 +5,5 @@
 /output_*/
 /source/components/
 /vendor/
+*.pyc
 publish.sh
