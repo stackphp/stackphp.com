@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block full_title %}{% block title %}{{ page.title }}{% endblock %} &mdash; {{ site.title }} &mdash; {{ site.subtitle }}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ site.url }}/components/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ site.url }}/components/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ site.url }}/components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ site.url }}/css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="{{ site.url }}/components/highlightjs/styles/github.css" />
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+        </header>
+        <div class="mainContent container">
+            <div class="row-fluid">
+                {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+            </div>
+        </div>
+        <footer class="container">
+            &copy; 2013 <a href="http://stackphp.com">Stack</a>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ site.url }}/components/jquery/jquery.min.js"><\/script>')</script>
+        <script src="{{ site.url }}/components/bootstrap/js/bootstrap.min.js"></script>
+        {% block scripts %}
+        {% endblock %}
+
+        {% if site.google_analytics_tracking_id %}
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '{{ site.google_analytics_tracking_id }}']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        {% endif %}
+        <script src="{{ site.url }}/components/highlightjs/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

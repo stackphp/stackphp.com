@@ -1,0 +1,70 @@
+.jumbotron {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.jumbotron .tagline a {
+    color: inherit;
+}
+
+.jumbotron .tagline a:hover {
+    color: #08c;
+}
+
+.jumbotron h1 {
+    display: inline-block;
+    background-image: url(stack-logo.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 5em;
+    line-height: 1em;
+    text-indent: 1em;
+}
+
+.jumbotron p.tagline {
+    font-size: 1em;
+    line-height: 1em;
+    margin: .75em 0;
+}
+
+h4 small
+{
+    display: block;
+    font-size: 60%;
+    color: #888;
+}
+
+.mainContent, footer.container {
+    max-width: 900px;
+}
+
+footer.container {
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 2px solid #eee;
+}
+pre code.php {
+    background-color: #f5f5f5;
+}
+
+.toolbox i {
+    font-size: 50px;
+}
+
+@media (max-width: 767px) {
+    .jumbotron a.btn {
+        font-size: 12px;
+        padding: 5px 9px;
+    }
+}
+
+@media (min-width: 768px) {
+    .jumbotron {
+        font-size: 2em;
+        margin-bottom: 2em;
+    }
+    .jumbotron a.btn {
+        margin-top: 1em;
+    }
+}

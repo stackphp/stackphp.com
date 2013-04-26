@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{% block full_title %}{{ site.title }} &mdash; {{ site.subtitle }}{% endblock %}
+{% block content %}
+<div class="jumbotron masthead">
+    <h1>Stack</h1>
+    <p class="tagline">Composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares since 2013!</p>
+    <p>
+        <a href="https://github.com/stackphp" class="btn btn-primary btn-large"><i class="icon-github"></i> Find Stack on GitHub</a>
+    </p>
+</div>
+
+<hr>
+
+<div class="about">
+    <h2>What is Stack?</h2>
+    <p>
+        Stack is a convention for composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares. It evolved from a blog post titled <a href="https://igor.io/2013/02/02/http-kernel-middlewares.html">HttpKernel middlewares</a> in which it was proposed that <code>HttpKernelInterface</code> decorators could be created to mimic functionality similar to that of <a href="http://rack.github.io/">Rack</a> or other language-specific HTTP interfaces.
+    </p>
+</div>
+
+<hr>
+
+<div class="toolbox">
+    <h2>The Toolbox</h2>
+    <div class="row-fluid">
+        <div class="tool well well-small span4">
+            <h3>Builder <i class="icon-wrench pull-right"></i></h3>
+            <p>Builder constructs a nested HttpKernelInterface decorator tree. It models it as a stack of middlewares.</p>
+            <p><a class="btn btn-primary" href="https://github.com/stackphp/builder">Learn More</a></p>
+        </div>
+        <div class="tool well well-small span4">
+            <h3>Session <i class="icon-eye-open pull-right"></i></h3>
+            <p>Provides a request session for subsequent middlewares. Based on the <a href="http://silex.sensiolabs.org/">Silex</a> <a href="http://silex.sensiolabs.org/doc/providers/session.html">SessionServiceProvider</a>.</p>
+            <p><a class="btn btn-primary" href="https://github.com/stackphp/session">Learn More</a></p>
+        </div>
+        <div class="tool well well-small span4">
+            <h3>URL Map <i class="icon-map-marker pull-right"></i></h3>
+            <p>Provides the ability to map paths to specific HttpKernelInterface applications and dispatches accordingly.</p>
+            <p><a class="btn btn-primary" href="https://github.com/stackphp/url-map">Learn More</a></p>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="tool well well-small span4">
+            <h3>OAuth <i class="icon-lock pull-right"></i></h3>
+            <p>Provides experimental OAuth authentication for subsequent middlewares. Leverages <a href="">PHPoAuthLib</a>.</p>
+            <p><a class="btn btn-primary" href="https://github.com/stackphp/oauth">Learn More</a></p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="examples">
+    <h2>Example</h2>
+    <pre><code class="php">use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\HttpCache\Store;
+
+// This can be **any** HttpKernelInterface based application
+$app = new Silex\Application();
+$app->get('/', function () {
+    return 'Hello World!';
+});
+
+// Extend the behaviour of the application with some middlewares
+$stack = (new Stack\Builder())
+    ->push('Stack\Logger', new Monolog\Logger('app'))
+    ->push('Symfony\Component\HttpKernel\HttpCache\HttpCache', new Store(__DIR__.'/cache'));
+$app = $stack->resolve($app);
+
+// Front controller is business as usual
+$request = Request::createFromGlobals();
+$response = $app->handle($request)->send();
+$app->terminate($request, $response);</code></pre>
+</div>
+{% endblock %}
