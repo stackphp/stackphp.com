@@ -74,4 +74,21 @@ $request = Request::createFromGlobals();
 $response = $app->handle($request)->send();
 $app->terminate($request, $response);</code></pre>
 </div>
+
+<hr>
+
+<div class="middleware">
+    <h2>Your own middleware</h2>
+    <p>
+        A stack middleware is just an object that follows these conventions:
+    </p>
+    <ul>
+        <li>Implement the <code>HttpKernelInterface</code></li>
+        <li>Take the decorated app as the first constructor argument</li>
+        <li>Decorate the handle call, delegate to the decorated app</li>
+    </ul>
+    <p>
+        Yes, leveraging the HTTP abstraction is that easy!
+    </p>
+</div>
 {% endblock %}
