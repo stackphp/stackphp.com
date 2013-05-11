@@ -15,16 +15,11 @@
         <![endif]-->
     </head>
     <body>
-        <header>
-        </header>
         <div class="mainContent container">
             <div class="row-fluid">
                 {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
             </div>
         </div>
-        <footer class="container">
-            Go stack some middlewares
-        </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{ site.url }}/components/jquery/jquery.min.js"><\/script>')</script>

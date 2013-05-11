@@ -68,3 +68,25 @@ pre code.php {
         margin-top: 1em;
     }
 }
+
+.authors {
+    text-align: center;
+}
+
+ul.avatars {
+    list-style: none;
+}
+
+ul.avatars li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+ul.avatars li img {
+    margin-right: 10px;
+}
+
+ul.avatars li a {
+    text-decoration: none;
+}
