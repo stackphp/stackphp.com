@@ -58,28 +58,6 @@ layout: default
         <img src="{{ site.url }}/img/middleware.png" alt="">
     </figure>
     -->
-
-    <p>A simple middleware, which appends "YOLO!" in big bold text to every request, looks like this:</p>
-    <pre><code class="php">{%- filter escape -%}use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
-
-class YoloMiddleware implements HttpKernelInterface
-{
-    protected $app;
-
-    public function __construct(HttpKernelInterface $app)
-    {
-        $this->app = $app;
-    }
-
-    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
-    {
-        $response = $this->app->handle($request, $type, $catch);
-        $response->setContent($response->getContent() . "<h1>YOLO!</h1>");
-
-        return $response;
-    }
-}{%- endfilter -%}</code></pre>
 </div>
 
 <hr>
