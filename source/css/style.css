@@ -77,6 +77,10 @@ pre code.php {
     }
 }
 
+figure {
+    text-align: center;
+}
+
 .authors {
     text-align: center;
 }
