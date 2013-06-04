@@ -1,18 +1,10 @@
-body {
-    font-size: 18px;
+.text p, .text ul, .text ol {
+    font-size: 1.4em;
+    line-height: 1.6em;
 }
 
-p {
-    line-height: 1.4;
-    margin: 0 0 1em;
-}
-
-code {
-    font-size: 17px;
-}
-
-li {
-    margin: 0 0 5px;
+.text li, {
+    margin-top: 10px;
 }
 
 .jumbotron {
@@ -110,7 +102,7 @@ ul.avatars li a {
 .frameworks-logo-list {
     list-style: none;
     text-align: center;
-    margin: 0;
+    margin: 1.5em 0;
 }
 
 .frameworks-logo-list > li {
@@ -120,4 +112,29 @@ ul.avatars li a {
 }
 .frameworks-logo-list img {
     max-height: 60px;
+}
+
+ol.conventions {
+    margin: 1.5em 0;
+}
+
+ol.conventions .no {
+    background: #000000;
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 5px;
+    width: 1em;
+    text-align: center;
+    margin: 0 auto 10px auto;
+}
+
+@media (max-width: 767px) {
+    ol.conventions li {
+        padding-top: 0.2em;
+    }
+    ol.conventions .no {
+        float: left;
+        margin-right: 0.5em;
+        margin-top: -0.2em;
+    }
 }

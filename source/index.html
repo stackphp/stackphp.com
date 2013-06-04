@@ -20,26 +20,37 @@ layout: default
 
 <hr>
 
-<div class="why">
-    <h2>Why?</h2>
+<div class="about text">
+    <h2>A common layer</h2>
     <p>
-        Right now there is no easy way to re-use HTTP-specific code in PHP. Accessing superglobals and emitting headers and data as side effects is messy and unpredictable. While frameworks are becoming more decoupled, they still have their own implementation of anything that touches HTTP.
+        What do we want? Re-use at the web layer!
     </p>
     <p>
-        We want to fix this.
+        Superglobals and side-effecting output mechanisms of PHP make this challenging and force every framework to re-invent.
     </p>
     <p>
-        What worked for the Ruby world with <a href="http://rack.github.io/">Rack</a> (similar interfaces exist for Java, Python, Perl and others) can work for PHP with Stack.
+        But Symfony's HttpKernelInterface provides a solid abstraction, which makes creating and sharing framework-agnostic HTTP filters a breeze!
     </p>
 </div>
 
 <hr>
 
-<div class="about">
-    <h2>What is Stack?</h2>
-
+<div class="about text">
+    <h2>HttpKernel</h2>
     <p>
-        Stack is a convention for composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares. Any framework based on Symfony2's HttpKernelInterface can use these middlewares. They allow an application to be extended in a generic way, simply by wrapping objects around the kernel.
+        The <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> models web request and response as PHP objects, giving them value semantics.
+    </p>
+    <figure>
+        <img src="{{ site.url }}/img/kernel.png" alt="HttpKernel">
+    </figure>
+</div>
+
+<hr>
+
+<div class="about text">
+    <h2>What is Stack?</h2>
+    <p>
+        Stack is a convention for composing HttpKernelInterface middlewares.
     </p>
 
     <!--
@@ -74,7 +85,7 @@ class YoloMiddleware implements HttpKernelInterface
 <hr>
 
 <div class="frameworks">
-    <h2>Works already with</h2>
+    <h2 class="text-center">Supported frameworks</h2>
 
     {% spaceless %}
     <ul class="frameworks-logo-list clearfix">
@@ -90,16 +101,16 @@ class YoloMiddleware implements HttpKernelInterface
 
 <hr>
 
-<div class="middleware">
+<div class="middleware text">
     <h2>Conventions</h2>
     <p>
-        A stack middleware is just an object that follows these conventions:
+        A stack middleware is just an object that follows these <strong>conventions</strong>:
     </p>
-    <ul>
-        <li>Implement the <code>HttpKernelInterface</code></li>
-        <li>Take the decorated app as the first constructor argument</li>
-        <li>Decorate the handle call, delegate to the decorated app</li>
-    </ul>
+    <ol class="conventions inline clearfix">
+        <li class="span4 clearfix"><div class="no">1</div> Implement the <strong>HttpKernelInterface</strong></li>
+        <li class="span4 clearfix"><div class="no">2</div> Take the <strong>decorated app</strong> as the first constructor argument</li>
+        <li class="span4 clearfix"><div class="no">3</div> Decorate the handle call, <strong>delegate</strong> to the decorated app</li>
+    </ol>
 
     <p>
         Yes, leveraging the HTTP abstraction is that easy!
