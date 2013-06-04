@@ -45,8 +45,7 @@ li {
     margin: .75em 0;
 }
 
-h4 small
-{
+h4 small {
     display: block;
     font-size: 60%;
     color: #888;
@@ -109,15 +108,15 @@ ul.avatars li a {
 }
 
 .frameworks-logo-list {
-    /* Clearfix */
-    margin: 0 0 20px -20px;
     list-style: none;
+    text-align: center;
+    margin: 0;
 }
 
 .frameworks-logo-list > li {
     vertical-align: middle;
     display: inline-block;
-    margin: 0 0 0 20px;
+    margin: 5px 10px 0 10px;
 }
 .frameworks-logo-list img {
     max-height: 60px;
