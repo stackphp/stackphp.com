@@ -20,10 +20,63 @@ layout: default
 
 <hr>
 
+<div class="why">
+    <h2>Why?</h2>
+    <p>
+        Right now there is no easy way to re-use HTTP-specific code in PHP. Accessing superglobals and emitting headers and data as side effects is messy and unpredictable. While frameworks are becoming more decoupled, they still have their own implementation of anything that touches HTTP.
+    </p>
+    <p>
+        We want to fix this.
+    </p>
+    <p>
+        What worked for the Ruby world with <a href="http://rack.github.io/">Rack</a> (similar interfaces exist for Java, Python, Perl and others) can work for PHP with Stack.
+    </p>
+</div>
+
+<hr>
+
 <div class="about">
     <h2>What is Stack?</h2>
     <p>
-        Stack is a convention for composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares. It evolved from a blog post titled <a href="https://igor.io/2013/02/02/http-kernel-middlewares.html">HttpKernel middlewares</a> in which it was proposed that <code>HttpKernelInterface</code> decorators could be created to mimic functionality similar to that of <a href="http://rack.github.io/">Rack</a> or other language-specific HTTP interfaces.
+        Stack is a convention for composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares. Any framework based on Symfony2's HttpKernelInterface can use these middlewares. They allow an application to be extended in a generic way, simply by wrapping objects around the kernel.
+    </p>
+</div>
+
+<hr>
+
+<div class="frameworks">
+    <h2>Which frameworks support Stack?</h2>
+    <p>
+        The following frameworks and apps are using the HttpKernelInterface abstraction and can thus benefit from Stack:
+    </p>
+    <ul>
+        <li><a href="http://symfony.com/">Symfony2</a></li>
+        <li><a href="http://silex.sensiolabs.org/">Silex</a></li>
+        <li><a href="http://laravel.com/">Laravel4</a></li>
+        <li><a href="https://drupal.org/">Drupal8</a></li>
+        <li><a href="http://ez.no/">eZ Publish 5</a></li>
+        <li><a href="http://yolophp.com/">YOLO</a></li>
+        <li>Your own?</li>
+    </ul>
+    <p>
+        As more frameworks and apps join in, more re-use will be possible.
+    </p>
+</div>
+
+<hr>
+
+<div class="middleware">
+    <h2>Conventions</h2>
+    <p>
+        A stack middleware is just an object that follows these conventions:
+    </p>
+    <ul>
+        <li>Implement the <code>HttpKernelInterface</code></li>
+        <li>Take the decorated app as the first constructor argument</li>
+        <li>Decorate the handle call, delegate to the decorated app</li>
+    </ul>
+    <p>
+        Yes, leveraging the HTTP abstraction is that easy!
     </p>
 </div>
 
@@ -60,7 +113,7 @@ layout: default
 <hr>
 
 <div class="examples">
-    <h2>Example</h2>
+    <h2>How do I use it?</h2>
     <pre><code class="php">use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpCache\Store;
 
@@ -80,23 +133,6 @@ $app = $stack->resolve($app);
 $request = Request::createFromGlobals();
 $response = $app->handle($request)->send();
 $app->terminate($request, $response);</code></pre>
-</div>
-
-<hr>
-
-<div class="middleware">
-    <h2>Your own middleware</h2>
-    <p>
-        A stack middleware is just an object that follows these conventions:
-    </p>
-    <ul>
-        <li>Implement the <code>HttpKernelInterface</code></li>
-        <li>Take the decorated app as the first constructor argument</li>
-        <li>Decorate the handle call, delegate to the decorated app</li>
-    </ul>
-    <p>
-        Yes, leveraging the HTTP abstraction is that easy!
-    </p>
 </div>
 
 <footer class="authors container">
