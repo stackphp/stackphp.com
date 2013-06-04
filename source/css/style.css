@@ -107,3 +107,18 @@ ul.avatars li img {
 ul.avatars li a {
     text-decoration: none;
 }
+
+.frameworks-logo-list {
+    /* Clearfix */
+    margin: 0 0 20px -20px;
+    list-style: none;
+}
+
+.frameworks-logo-list > li {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 0 0 20px;
+}
+.frameworks-logo-list img {
+    max-height: 60px;
+}

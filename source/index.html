@@ -37,30 +37,55 @@ layout: default
 
 <div class="about">
     <h2>What is Stack?</h2>
+
     <p>
         Stack is a convention for composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares. Any framework based on Symfony2's HttpKernelInterface can use these middlewares. They allow an application to be extended in a generic way, simply by wrapping objects around the kernel.
     </p>
+
+    <!--
+    <figure>
+        <img src="{{ site.url }}/img/middleware.png" alt="">
+    </figure>
+    -->
+
+    <p>A simple middleware, which appends "YOLO!" in big bold text to every request, looks like this:</p>
+    <pre><code class="php">{%- filter escape -%}use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
+
+class YoloMiddleware implements HttpKernelInterface
+{
+    protected $app;
+
+    public function __construct(HttpKernelInterface $app)
+    {
+        $this->app = $app;
+    }
+
+    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+    {
+        $response = $this->app->handle($request, $type, $catch);
+        $response->setContent($response->getContent() . "<h1>YOLO!</h1>");
+
+        return $response;
+    }
+}{%- endfilter -%}</code></pre>
 </div>
 
 <hr>
 
 <div class="frameworks">
-    <h2>Which frameworks support Stack?</h2>
-    <p>
-        The following frameworks and apps are using the HttpKernelInterface abstraction and can thus benefit from Stack:
-    </p>
-    <ul>
-        <li><a href="http://symfony.com/">Symfony2</a></li>
-        <li><a href="http://silex.sensiolabs.org/">Silex</a></li>
-        <li><a href="http://laravel.com/">Laravel4</a></li>
-        <li><a href="https://drupal.org/">Drupal8</a></li>
-        <li><a href="http://ez.no/">eZ Publish 5</a></li>
-        <li><a href="http://yolophp.com/">YOLO</a></li>
-        <li>Your own?</li>
+    <h2>Works already with</h2>
+
+    {% spaceless %}
+    <ul class="frameworks-logo-list">
+        <li><a href="http://symfony.com/"><img src="{{site.url}}/img/users/symfony.png" alt="Symfony 2" /></a></li>
+        <li><a href="http://silex.sensiolabs.org/"><img src="{{site.url}}/img/users/silex.png" alt="Silex" /></a></li>
+        <li><a href="http://laravel.com/"><img src="{{site.url}}/img/users/laravel.png" alt="Laravel 4" /></a></li>
+        <li><a href="https://drupal.org/"><img src="{{site.url}}/img/users/drupal.png" alt="Drupal8" /></a></li>
+        <li><a href="http://ez.no/"><img src="{{site.url}}/img/users/ez-publish.png" alt="eZ Publish 5" /></a></li>
+        <li><a href="http://yolophp.com/"><img src="{{site.url}}/img/users/yolo.png" alt="Yolo" /></a></li>
     </ul>
-    <p>
-        As more frameworks and apps join in, more re-use will be possible.
-    </p>
+    {% endspaceless %}
 </div>
 
 <hr>
