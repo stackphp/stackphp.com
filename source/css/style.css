@@ -1,3 +1,20 @@
+body {
+    font-size: 18px;
+}
+
+p {
+    line-height: 1.4;
+    margin: 0 0 1em;
+}
+
+code {
+    font-size: 17px;
+}
+
+li {
+    margin: 0 0 5px;
+}
+
 .jumbotron {
     text-align: center;
     margin: 2em 0;

@@ -75,6 +75,29 @@ layout: default
         <li>Take the decorated app as the first constructor argument</li>
         <li>Decorate the handle call, delegate to the decorated app</li>
     </ul>
+
+    <p>A simple middleware could look like this:</p>
+    <pre><code class="php">use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
+
+class MyMiddleware implements HttpKernelInterface
+{
+    protected $app;
+
+    public function __construct(HttpKernelInterface $app)
+    {
+        $this-&gt;app = $app;
+    }
+
+    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+    {
+        $response = $this-&gt;app-&gt;handle($request, $type, $catch);
+        $response-&gt;setContent($response-&gt;getContent() . "YOLO!");
+
+        return $response;
+    }
+}</code></pre>
+
     <p>
         Yes, leveraging the HTTP abstraction is that easy!
     </p>
