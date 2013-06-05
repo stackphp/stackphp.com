@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a15eaad6b33a4f9da02587e69cb17b83",
+    "hash": "cd4c8c35181a9e7793bb2349a8d12f7c",
     "packages": [
         {
             "name": "components/bootstrap",
-            "version": "2.3.1",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/bootstrap.git",
-                "reference": "2.3.1"
+                "reference": "2.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/bootstrap/zipball/2.3.1",
-                "reference": "2.3.1",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/2.3.2",
+                "reference": "2.3.2",
                 "shasum": ""
             },
             "require": {
@@ -58,7 +58,7 @@
                 "bootstrap",
                 "css"
             ],
-            "time": "2013-04-24 18:00:29"
+            "time": "2013-06-05 15:22:39"
         },
         {
             "name": "components/font-awesome",
@@ -1412,12 +1412,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sculpin/sculpin.git",
-                "reference": "f11db95ffd1696b515f388718c1058ceca79ad5a"
+                "reference": "42e92548f683e218b7f72a1acef24629fdf4a128"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sculpin/sculpin/zipball/f11db95ffd1696b515f388718c1058ceca79ad5a",
-                "reference": "f11db95ffd1696b515f388718c1058ceca79ad5a",
+                "url": "https://api.github.com/repos/sculpin/sculpin/zipball/42e92548f683e218b7f72a1acef24629fdf4a128",
+                "reference": "42e92548f683e218b7f72a1acef24629fdf4a128",
                 "shasum": ""
             },
             "require": {
@@ -1436,7 +1436,6 @@
                 "symfony/class-loader": ">=2.1,<3.0",
                 "symfony/config": ">=2.1,<3.0",
                 "symfony/console": ">=2.3,<3.0",
-                "symfony/debug": ">=2.3,<3.0",
                 "symfony/dependency-injection": ">=2.1,<3.0",
                 "symfony/event-dispatcher": ">=2.1,<3.0",
                 "symfony/filesystem": ">=2.1,<3.0",
@@ -1497,7 +1496,7 @@
                 "site",
                 "static"
             ],
-            "time": "2013-05-23 08:47:40"
+            "time": "2013-06-05 16:04:52"
         },
         {
             "name": "seld/jsonlint",
@@ -1646,17 +1645,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "dev-master",
+            "version": "v2.3.0",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "28b4eced63a11275583345feb3c8269967819eca"
+                "reference": "v2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/28b4eced63a11275583345feb3c8269967819eca",
-                "reference": "28b4eced63a11275583345feb3c8269967819eca",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/v2.3.0",
+                "reference": "v2.3.0",
                 "shasum": ""
             },
             "require": {
@@ -1671,7 +1670,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -1695,7 +1694,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-04 15:09:18"
+            "time": "2013-05-30 05:11:26"
         },
         {
             "name": "symfony/debug",
@@ -1755,34 +1754,35 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v2.2.2",
+            "version": "v2.3.0",
             "target-dir": "Symfony/Component/DependencyInjection",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DependencyInjection.git",
-                "reference": "v2.2.2"
+                "reference": "v2.3.0-RC1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/v2.2.2",
-                "reference": "v2.2.2",
+                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/v2.3.0-RC1",
+                "reference": "v2.3.0-RC1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/config": ">=2.2,<2.3-dev",
+                "symfony/config": ">=2.2,<3.0",
                 "symfony/yaml": ">=2.0,<3.0"
             },
             "suggest": {
-                "symfony/config": "2.2.*",
-                "symfony/yaml": "2.2.*"
+                "symfony/config": "",
+                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+                "symfony/yaml": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -1806,7 +1806,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-06 08:37:50"
+            "time": "2013-05-13 14:36:40"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -2358,8 +2358,7 @@
     "stability-flags": {
         "sculpin/sculpin": 20,
         "dflydev/embedded-composer": 20,
-        "composer/composer": 20,
-        "symfony/console": 20
+        "composer/composer": 20
     },
     "platform": [
 
