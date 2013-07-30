@@ -51,6 +51,7 @@ pre code.php {
     font-size: 50px;
 }
 
+
 @media (max-width: 767px) {
     .jumbotron a.btn {
         font-size: 12px;
@@ -132,6 +133,10 @@ ol.conventions .no {
         margin-right: 0.5em;
         margin-top: -0.2em;
     }
+
+    .middlewares div.row-fluid h3 {
+        margin-top: 20px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -142,5 +147,9 @@ ol.conventions .no {
 
     .text li, {
         margin-top: 10px;
+    }
+
+    .middlewares div.row-fluid:not(:nth-of-type(1)) {
+        margin-top: 2em;
     }
 }
