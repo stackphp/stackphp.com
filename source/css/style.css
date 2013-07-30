@@ -51,24 +51,6 @@ pre code.php {
     font-size: 50px;
 }
 
-
-@media (max-width: 767px) {
-    .jumbotron a.btn {
-        font-size: 12px;
-        padding: 5px 9px;
-    }
-}
-
-@media (min-width: 768px) {
-    .jumbotron {
-        font-size: 2em;
-        margin-bottom: 2em;
-    }
-    .jumbotron a.btn {
-        margin-top: 1em;
-    }
-}
-
 figure {
     text-align: center;
 }
@@ -125,6 +107,11 @@ ol.conventions .no {
 }
 
 @media (max-width: 767px) {
+    .jumbotron a.btn {
+        font-size: 12px;
+        padding: 5px 9px;
+    }
+
     ol.conventions li {
         padding-top: 0.2em;
     }
@@ -140,6 +127,15 @@ ol.conventions .no {
 }
 
 @media (min-width: 768px) {
+    .jumbotron {
+        font-size: 2em;
+        margin-bottom: 2em;
+    }
+
+    .jumbotron a.btn {
+        margin-top: 1em;
+    }
+
     .text p, .text ul, .text ol {
         font-size: 1.4em;
         line-height: 1.6em;
