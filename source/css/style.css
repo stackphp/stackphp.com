@@ -146,6 +146,7 @@ ol.conventions .no {
         margin-top: -0.2em;
     }
 
+    .conventions-and-protocols div.row-fluid h3,
     .middlewares div.row-fluid h3 {
         margin-top: 20px;
     }
@@ -174,6 +175,7 @@ ol.conventions .no {
         margin-top: 10px;
     }
 
+    .conventions-and-protocols div.row-fluid:not(:nth-of-type(1)),
     .middlewares div.row-fluid:not(:nth-of-type(1)) {
         margin-top: 2em;
     }
