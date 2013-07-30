@@ -1,28 +1,9 @@
 ---
 layout: default
+is_homepage: true
 ---
 {% block full_title %}{{ site.title }} &mdash; {{ site.subtitle }}{% endblock %}
 {% block content %}
-<div class="jumbotron masthead">
-    <h1>Stack</h1>
-    <p class="tagline">Composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares since 2013!</p>
-    <p>
-        <ul class="nav nav-pills" style="display: inline-block;">
-            <li>
-                <a href="https://github.com/stackphp"><i class="icon-github"></i> stackphp</a>
-            </li>
-            <li>
-                <a href="https://twitter.com/stackphp"><i class="icon-twitter"></i> @stackphp</a>
-            </li>
-            <li>
-                <a href="irc://irc.freenode.net/%23stackphp"><i class="icon-comment"></i> #stackphp</a>
-            </li>
-        </ul>
-    </p>
-</div>
-
-<hr>
-
 <div class="about text">
     <h2>A common layer</h2>
     <p>
@@ -168,32 +149,61 @@ layout: default
     </div>
 </div>
 
-<!--
 <hr>
 
-<div class="examples">
-    <h2>How do I use it?</h2>
-    <pre><code class="php">use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\HttpCache\Store;
+<div class="conventions-and-protocols">
+    <h2>
+        <a name="conventions-and-protocols"></a>
+        Conventions and Protocols
+        <a class="anchor" href="#conventions-and-protocols">
+            <i class="icon icon-link"></i>
+        </a>
+    </h2>
+    <p>
+        In order to further the goal of interoperability between disparate
+        <code>HttpKernelInterface</code> implementations, Stack  tries to
+        avoid imposing interfaces and instead relies on conventions and
+        protocols for the purpose of integration. The following is a list of
+        community driven proposals for Stack conventions and protocols.
+    </p>
 
-// This can be **any** HttpKernelInterface based application
-$app = new Silex\Application();
-$app->get('/', function () {
-    return 'Hello World!';
-});
-
-// Extend the behaviour of the application with some middlewares
-$stack = (new Stack\Builder())
-    ->push('Stack\Session')
-    ->push('Symfony\Component\HttpKernel\HttpCache\HttpCache', new Store(__DIR__.'/cache'));
-$app = $stack->resolve($app);
-
-// Front controller is business as usual
-$request = Request::createFromGlobals();
-$response = $app->handle($request)->send();
-$app->terminate($request, $response);</code></pre>
+    <div class="row-fluid">
+        <div class="span6">
+            <h3><a href="{{ site.url }}/specs/1/">1 - Proposals</a> <span class="label">Draft</span></h3>
+            <p>
+                Specification for how community driven Stack proposals will be
+                written and managed.
+            </p>
+            <div class="btn-group">
+                <a class="btn" href="{{ site.url }}/specs/1/"><i class="icon icon-book"></i> Specification</a>
+            </div>
+        </div>
+        <div class="span6">
+            <h3><a href="{{ site.url }}/specs/2/">2 - Authentication</a> <span class="label">Draft</span></h3>
+            <p>
+                Specification for authentication middlewares to follow in order
+                for applications and authorization middlewares to be able to
+                interact with each other.
+            </p>
+            <div class="btn-group">
+                <a class="btn" href="{{ site.url }}/specs/2/"><i class="icon icon-book"></i> Specification</a>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <h3><a href="{{ site.url }}/specs/3/">3 - Authorization</a> <span class="label">Draft</span></h3>
+            <p>
+                Specification for authorization middlewares to follow in order
+                for applications and authentication middlewares to be able to
+                interact with each other.
+            </p>
+            <div class="btn-group">
+                <a class="btn" href="{{ site.url }}/specs/2/"><i class="icon icon-book"></i> Specification</a>
+            </div>
+        </div>
+    </div>
 </div>
--->
 
 <footer class="authors container">
     <p class="lead">Brought to you by</p>

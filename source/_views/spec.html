@@ -1,0 +1,12 @@
+{% extends "default.html" %}
+{% block content_wrapper %}
+    <div class="spec-meta">
+        <h2>{{ page.title }} <span class="label">{{ page.status }}</span></h2>
+    </div>
+    <section class="spec-body">
+
+        {% block content %}
+            <p>This proposal has no content.</p>
+        {% endblock %}
+    </section>
+{% endblock %}
