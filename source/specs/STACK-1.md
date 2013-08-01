@@ -1,11 +1,11 @@
 ---
 layout: spec
-title: 0 Proposals
+title: STACK-1 Core
 status: draft
 ---
 
-Specification for how community driven Stack proposals will be written and
-managed.
+Specification for writing and interacting with Stack middlewares and
+applications.
 
  * Name: {{ page.title }}
  * Editor: Beau Simensen <[beau@dflydev.com](mailto:beau@dflydev.com)>
@@ -20,5 +20,5 @@ interpreted as described in [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt).
 
 ### Goals
 
- * To define a workflow for community driven Stack proposals.
+ * Specify requirements for a Stack middleware
 

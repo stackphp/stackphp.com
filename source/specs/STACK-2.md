@@ -1,6 +1,6 @@
 ---
 layout: spec
-title: 2 Authentication
+title: STACK-2 Authentication
 status: draft
 ---
 
