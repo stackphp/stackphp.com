@@ -1,6 +1,6 @@
 ---
 layout: spec
-title: 3 Authorization
+title: STACK-3 Authorization
 status: draft
 ---
 
