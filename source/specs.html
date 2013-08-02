@@ -1,0 +1,66 @@
+---
+layout: default
+title: Conventions and Protocols
+nav_name: specs
+---
+{% block content %}
+<div class="conventions-and-protocols">
+    <h2>
+        Conventions and Protocols
+    </h2>
+    <p>
+        In order to further the goal of interoperability between disparate
+        <code>HttpKernelInterface</code> implementations, Stack  tries to
+        avoid imposing interfaces and instead relies on conventions and
+        protocols for the purpose of integration. The following is a list of
+        community driven proposals for Stack conventions and protocols.
+    </p>
+
+    <div class="row-fluid">
+        <div class="span6">
+            <h3><a href="{{ site.url }}/specs/STACK-0/">STACK-0 Proposals</a> <span class="label">Draft</span></h3>
+            <p>
+                Specification for how community driven Stack proposals will be
+                written and managed.
+            </p>
+            <div class="btn-group">
+                <a class="btn" href="{{ site.url }}/specs/STACK-0/"><i class="icon icon-book"></i> Proposal</a>
+            </div>
+        </div>
+        <div class="span6">
+            <h3><a href="{{ site.url }}/specs/STACK-1/">STACK-1 Core</a> <span class="label">Draft</span></h3>
+            <p>
+                Specification for writing and interacting with Stack middlewares
+                and applications.
+            </p>
+            <div class="btn-group">
+                <a class="btn" href="{{ site.url }}/specs/STACK-1/"><i class="icon icon-book"></i> Proposal</a>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <h3><a href="{{ site.url }}/specs/STACK-2/">STACK-2 Authentication</a> <span class="label">Draft</span></h3>
+            <p>
+                Specification for authentication middlewares to follow in order
+                for applications and authorization middlewares to be able to
+                interact with each other.
+            </p>
+            <div class="btn-group">
+                <a class="btn" href="{{ site.url }}/specs/STACK-2/"><i class="icon icon-book"></i> Proposal</a>
+            </div>
+        </div>
+        <div class="span6">
+            <h3><a href="{{ site.url }}/specs/STACK-3/">STACK-3 Authorization</a> <span class="label">Draft</span></h3>
+            <p>
+                Specification for authorization middlewares to follow in order
+                for applications and authentication middlewares to be able to
+                interact with each other.
+            </p>
+            <div class="btn-group">
+                <a class="btn" href="{{ site.url }}/specs/STACK-3/"><i class="icon icon-book"></i> Proposal</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

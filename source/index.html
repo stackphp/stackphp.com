@@ -4,6 +4,9 @@ is_homepage: true
 ---
 {% block full_title %}{{ site.title }} &mdash; {{ site.subtitle }}{% endblock %}
 {% block content %}
+
+<hr>
+
 <div class="about text">
     <h2>A common layer</h2>
     <p>
@@ -78,200 +81,8 @@ is_homepage: true
         Yes, leveraging the HTTP abstraction is that easy!
     </p>
 </div>
-
-<hr>
-
-<div class="toolbox">
-    <h2>The Toolbox</h2>
-    <div class="row-fluid">
-        <div class="tool well well-small span6">
-            <h3>Builder <i class="icon-wrench pull-right"></i></h3>
-            <p>Builder constructs a nested <code>HttpKernelInterface</code> decorator tree. It models it as a stack of middlewares.</p>
-            <p><a class="btn" href="https://github.com/stackphp/builder">Learn More</a></p>
-        </div>
-        <div class="tool well well-small span6">
-            <h3>Session <i class="icon-eye-open pull-right"></i></h3>
-            <p>Provides a request session for subsequent middlewares. Based on the <a href="http://silex.sensiolabs.org/">Silex</a> <a href="http://silex.sensiolabs.org/doc/providers/session.html">SessionServiceProvider</a>.</p>
-            <p><a class="btn" href="https://github.com/stackphp/session">Learn More</a></p>
-        </div>
-    </div>
-    <div class="row-fluid">
-        <div class="tool well well-small span6">
-            <h3>URL Map <i class="icon-map-marker pull-right"></i></h3>
-            <p>Provides the ability to map paths to specific <code>HttpKernelInterface</code> applications and dispatches accordingly.</p>
-            <p><a class="btn" href="https://github.com/stackphp/url-map">Learn More</a></p>
-        </div>
-        <div class="tool well well-small span6">
-            <h3>Lazy Kernel <i class="icon-moon pull-right"></i></h3>
-            <p>A lazy proxy for <code>HttpKernelInterface</code>, allows an app to be loaded on demand when combined with URL Map.</p>
-            <p><a class="btn" href="https://github.com/stackphp/LazyHttpKernel">Learn More</a></p>
-        </div>
-    </div>
-</div>
-
-<hr>
-
-<div class="middlewares">
-    <h2>Community Middlewares</h2>
-    <div class="row-fluid">
-        <div class="span6">
-            <h3>HttpCache</h3>
-            <p>The Symfony2 cache system relies on the simplicity and power of the HTTP cache as defined in the <a href="http://symfony.com/doc/current/glossary.html#term-http-specification">HTTP specification</a>.</p>
-            <p>
-                <a href="https://packagist.org/packages/symfony/http-kernel">symfony/http-kernel</a>
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="https://github.com/symfony/symfony/tree/master/src/Symfony/Component/HttpKernel"><i class="icon icon-github"></i> GitHub</a>
-                <a class="btn" href="http://symfony.com/doc/current/book/http_cache.html"><i class="icon icon-book"></i> Docs</a>
-                <a class="btn" href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpCache/HttpCache.php"><i class="icon icon-code"></i> Code</a>
-            </div>
-        </div>
-        <div class="span6">
-            <h3>GeoIp</h3>
-            <p>Adds geolocation results to the request for subsequent middlewares. Can use any geocoding provider from <a href="http://geocoder-php.org">http://geocoder-php.org</a>.</p>
-            <!--
-            <p>
-                <a href="https://packagist.org/packages/herebeducks/stack_geo">herebeducks/stack_geo</a>
-            </p>
-            -->
-            <div class="btn-group">
-                <a class="btn" href="https://github.com/herebeducks/StackGeoIp"><i class="icon icon-github"></i> GitHub</a>
-            </div>
-        </div>
-    </div>
-    <div class="row-fluid">
-        <div class="span6">
-            <h3>IpRestrict</h3>
-            <p>Stack middleware for restricting application access to specific IP addresses.</p>
-            <p>
-                <a href="https://packagist.org/packages/alsar/stack-ip-restrict">alsar/stack-ip-restrict</a>
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="https://github.com/alsar/stack-ip-restrict"><i class="icon icon-github"></i> GitHub</a>
-            </div>
-        </div>
-        <div class="span6">
-            <h3>Backstage</h3>
-            <p>Stack middleware for displaying maintenance pages.</p>
-            <!--
-            <p>
-                <a href="https://packagist.org/packages/atst/stack-backstage">atst/stack-backstage</a>
-            </p>
-            -->
-            <div class="btn-group">
-                <a class="btn" href="https://github.com/atst/stack-backstage"><i class="icon icon-github"></i> GitHub</a>
-            </div>
-        </div>
-    </div>
-    <div class="row-fluid">
-        <div class="span6">
-            <h3>OAuth</h3>
-            <p>
-                Experimental OAuth authentication. Leverages <a href="https://github.com/Lusitanian/PHPoAuthLib">PHPoAuthLib</a>.
-            </p>
-            <p>
-                <a href="https://packagist.org/packages/igorw/stack-oauth">igorw/stack-oauth</a>
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="https://github.com/igorw/stack-oauth"><i class="icon icon-github"></i> GitHub</a>
-            </div>
-        </div>
-        <div class="span6">
-            <h3><a href="https://github.com/dflydev/dflydev-stack-basic-authentication">Basic Authentication</a></h3>
-            <p>
-                Provides HTTP Basic Authentication following STACK-2 Authentication conventions.
-            </p>
-            <p>
-                <a href="https://packagist.org/packages/dflydev/stack-basic-authentication">dflydev/stack-basic-authentication</a>
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="https://github.com/dflydev/dflydev-stack-basic-authentication"><i class="icon icon-github"></i> GitHub</a>
-            </div>
-        </div>
-    </div>
-    <div class="row-fluid">
-        <div class="span6">
-            <h3><a href="https://github.com/dflydev/dflydev-stack-hawk">Hawk</a></h3>
-            <p>
-                Provides Hawk authentication following STACK-2 Authentication conventions.
-            </p>
-            <p>
-                <a href="https://packagist.org/packages/dflydev/stack-hawk">dflydev/stack-hawk</a>
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="https://github.com/dflydev/dflydev-stack-hawk"><i class="icon icon-github"></i> GitHub</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<hr>
-
-<div class="conventions-and-protocols">
-    <h2>
-        <a name="conventions-and-protocols"></a>
-        Conventions and Protocols
-        <a class="anchor" href="#conventions-and-protocols">
-            <i class="icon icon-link"></i>
-        </a>
-    </h2>
-    <p>
-        In order to further the goal of interoperability between disparate
-        <code>HttpKernelInterface</code> implementations, Stack  tries to
-        avoid imposing interfaces and instead relies on conventions and
-        protocols for the purpose of integration. The following is a list of
-        community driven proposals for Stack conventions and protocols.
-    </p>
-
-    <div class="row-fluid">
-        <div class="span6">
-            <h3><a href="{{ site.url }}/specs/STACK-0/">STACK-0 Proposals</a> <span class="label">Draft</span></h3>
-            <p>
-                Specification for how community driven Stack proposals will be
-                written and managed.
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="{{ site.url }}/specs/STACK-0/"><i class="icon icon-book"></i> Proposal</a>
-            </div>
-        </div>
-        <div class="span6">
-            <h3><a href="{{ site.url }}/specs/STACK-1/">STACK-1 Core</a> <span class="label">Draft</span></h3>
-            <p>
-                Specification for writing and interacting with Stack middlewares
-                and applications.
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="{{ site.url }}/specs/STACK-1/"><i class="icon icon-book"></i> Proposal</a>
-            </div>
-        </div>
-    </div>
-    <div class="row-fluid">
-        <div class="span6">
-            <h3><a href="{{ site.url }}/specs/STACK-2/">STACK-2 Authentication</a> <span class="label">Draft</span></h3>
-            <p>
-                Specification for authentication middlewares to follow in order
-                for applications and authorization middlewares to be able to
-                interact with each other.
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="{{ site.url }}/specs/STACK-2/"><i class="icon icon-book"></i> Proposal</a>
-            </div>
-        </div>
-        <div class="span6">
-            <h3><a href="{{ site.url }}/specs/STACK-3/">STACK-3 Authorization</a> <span class="label">Draft</span></h3>
-            <p>
-                Specification for authorization middlewares to follow in order
-                for applications and authentication middlewares to be able to
-                interact with each other.
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="{{ site.url }}/specs/STACK-3/"><i class="icon icon-book"></i> Proposal</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<footer class="authors container">
+{% endblock %}
+{% block footer %}
     <p class="lead">Brought to you by</p>
     <ul class="avatars">
         <li>
@@ -293,5 +104,4 @@ is_homepage: true
             </a>
         </li>
     </ul>
-</footer>
 {% endblock %}

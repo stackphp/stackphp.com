@@ -36,6 +36,7 @@ h3 .label { vertical-align: middle; }
     line-height: 1em;
 }
 
+footer h1 a,
 .jumbotron h1 a {
     display: inline-block;
     background-image: url(stack-logo.png);
@@ -46,6 +47,18 @@ h3 .label { vertical-align: middle; }
     color: inherit;
     text-decoration: none;
 }
+
+/*
+.navbar a.brand {
+    display: inline-block;
+    background-image: url(stack-logo.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 1em;
+    background-position-x: .5em;
+    text-indent: 1em;
+}
+*/
 
 .jumbotron p.tagline {
     font-size: 1em;
@@ -59,8 +72,11 @@ h4 small {
     color: #888;
 }
 
-.mainContent, footer.container {
+.navbar .container-fluid, .mainContent, footer.container {
     max-width: 900px;
+}
+.navbar .container-fluid {
+    margin: 0 auto;
 }
 
 footer.container {
@@ -102,6 +118,11 @@ ul.avatars li a {
     text-decoration: none;
 }
 
+.about.text,
+.middleware.text,
+.frameworks {
+    margin: 3em 0 5em;
+}
 .frameworks-logo-list {
     list-style: none;
     text-align: center;
@@ -179,4 +200,17 @@ ol.conventions .no {
     .middlewares div.row-fluid:not(:nth-of-type(1)) {
         margin-top: 2em;
     }
+}
+
+@media (min-width: 980px) {
+    body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        padding-bottom: 40px;
+    }
+
+    /*
+    .navbar a.brand {
+        background-position-x: 1em;
+    }
+    */
 }

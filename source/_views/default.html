@@ -15,33 +15,78 @@
         <![endif]-->
     </head>
     <body>
-
-        <div class="jumbotron masthead {% if page.is_homepage %}huge{% endif %}">
-            <h1><a href="{{ site.url }}/">Stack</a></h1>
-            <p class="tagline">Composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares since 2013!</p>
-            <p>
-                <ul class="nav nav-pills" style="display: inline-block;">
-                    <li>
-                        <a href="https://github.com/stackphp"><i class="icon-github"></i> stackphp</a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/stackphp"><i class="icon-twitter"></i> @stackphp</a>
-                    </li>
-                    <li>
-                        <a href="irc://irc.freenode.net/%23stackphp"><i class="icon-comment"></i> #stackphp</a>
-                    </li>
-                </ul>
-            </p>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="{{ site.url }}/">Stack</a>
+                    <div class="nav-collapse collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav" style="margin: 0 auto;">
+                            <li {% if page.nav_name == "toolbox" %} class="active" {% endif %}>
+                                <a href="{{ site.url }}/toolbox/">Toolbox</a>
+                            </li>
+                            <li {% if page.nav_name == "specs" %} class="active" {% endif %}>
+                                <a href="{{ site.url }}/specs/">Conventions and Protocols</a>
+                            </li>
+                            <li {% if page.nav_name == "middlewares" %} class="active" {% endif %}>
+                                <a href="{{ site.url }}/middlewares/">Community Middlewares</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        {% if page.is_homepage %}
+            <div class="jumbotron masthead {% if page.is_homepage %}huge{% endif %}">
+                <h1><a href="{{ site.url }}/">Stack</a></h1>
+                <p class="tagline">Composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares since 2013!</p>
+                <p>
+                    <ul class="nav nav-pills" style="display: inline-block;">
+                        <li>
+                            <a href="https://github.com/stackphp"><i class="icon-github"></i> stackphp</a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/stackphp"><i class="icon-twitter"></i> @stackphp</a>
+                        </li>
+                        <li>
+                            <a href="irc://irc.freenode.net/%23stackphp"><i class="icon-comment"></i> #stackphp</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        {% endif %}
 
         <div class="mainContent container">
             <div class="row-fluid">
-
-                <hr>
-
                 {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
             </div>
         </div>
+
+        <footer class="authors container">
+            {% block footer %}
+                <h1><a href="{{ site.url }}/">Stack</a></h1>
+                <p class="tagline">Composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares since 2013!</p>
+                <p>
+                    <ul class="nav nav-pills" style="display: inline-block;">
+                        <li>
+                            <a href="https://github.com/stackphp"><i class="icon-github"></i> stackphp</a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/stackphp"><i class="icon-twitter"></i> @stackphp</a>
+                        </li>
+                        <li>
+                            <a href="irc://irc.freenode.net/%23stackphp"><i class="icon-comment"></i> #stackphp</a>
+                        </li>
+                    </ul>
+                </p>
+            {% endblock %}
+        </footer>
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{ site.url }}/components/jquery/jquery.min.js"><\/script>')</script>
