@@ -20,14 +20,14 @@
                 <li {% if page.nav_name == "home" %} class="active" {% endif %}>
                     <a href="{{ site.url }}/">Stack</a>
                 </li>
+                <li {% if page.nav_name == "middlewares" %} class="active" {% endif %}>
+                    <a href="{{ site.url }}/middlewares/">Middlewares</a>
+                </li>
                 <li {% if page.nav_name == "toolbox" %} class="active" {% endif %}>
                     <a href="{{ site.url }}/toolbox/">Toolbox</a>
                 </li>
                 <li {% if page.nav_name == "specs" %} class="active" {% endif %}>
-                    <a href="{{ site.url }}/specs/">Conventions and Protocols</a>
-                </li>
-                <li {% if page.nav_name == "middlewares" %} class="active" {% endif %}>
-                    <a href="{{ site.url }}/middlewares/">Community Middlewares</a>
+                    <a href="{{ site.url }}/specs/">Conventions</a>
                 </li>
             </ul>
             <div class="nav-collapse collapse navbar-responsive-collapse">
