@@ -71,4 +71,10 @@ Stack authentication middlewares will be given an opportunity to challenge.
 
 ### Implementations
 
+ * [dflydev/stack-authentication](https://github.com/dflydev/dflydev-stack-authentication)
+   A collection of middlewares designed to help authentication middleware
+   implementors adhere to the STACK-2 Authentication conventions.
  * [dflydev/stack-hawk](https://github.com/dflydev/dflydev-stack-hawk)
+   [Hawk](https://github.com/hueniverse/hawk) authentication middleware.
+ * [dflydev/stack-basic-authentication](https://github.com/dflydev/dflydev-stack-basic-authentication)
+   HTTP Basic Authentication middleware.
