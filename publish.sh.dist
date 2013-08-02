@@ -1,4 +1,5 @@
 #!/bin/bash
 
+rm -rf output_prod
 vendor/bin/sculpin generate --env=prod || ( echo "Could not generate the site" && exit )
 fab || ( echo "Could not publish the site" && exit )
