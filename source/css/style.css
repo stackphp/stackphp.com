@@ -19,7 +19,7 @@ h3 .label { vertical-align: middle; }
 
 .jumbotron {
     text-align: center;
-    margin: 2em 0;
+    margin: 0.5em 0 2em 0;
 }
 
 .jumbotron .tagline a {
@@ -150,6 +150,14 @@ ol.conventions .no {
     width: 1em;
     text-align: center;
     margin: 0 auto 10px auto;
+}
+
+.stack-nav {
+    text-align: center;
+    margin-top: 2em;
+}
+.stack-nav ul {
+    display: inline-block;
 }
 
 @media (max-width: 767px) {
