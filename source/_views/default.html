@@ -17,7 +17,7 @@
     <body>
         <div class="mainContent container stack-nav">
             <ul class="nav nav-pills">
-                <li {% if page.nav_name == "" %} class="active" {% endif %}>
+                <li {% if page.nav_name == "home" %} class="active" {% endif %}>
                     <a href="{{ site.url }}/">Stack</a>
                 </li>
                 <li {% if page.nav_name == "toolbox" %} class="active" {% endif %}>
@@ -38,8 +38,8 @@
             </div>
         </div>
 
-        {% if page.is_homepage %}
-            <div class="jumbotron masthead {% if page.is_homepage %}huge{% endif %}">
+        {% if page.nav_name == "home" %}
+            <div class="jumbotron masthead {% if page.nav_name == "home" %}huge{% endif %}">
                 <h1><a href="{{ site.url }}/">Stack</a></h1>
                 <p class="tagline">Composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares since 2013!</p>
                 <p>
