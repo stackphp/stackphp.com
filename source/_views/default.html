@@ -16,25 +16,57 @@
     </head>
     <body>
         <div class="mainContent container stack-nav">
-            <ul class="nav nav-pills">
-                <li {% if page.nav_name == "home" %} class="active" {% endif %}>
-                    <a href="{{ site.url }}/">Stack</a>
-                </li>
-                <li {% if page.nav_name == "middlewares" %} class="active" {% endif %}>
-                    <a href="{{ site.url }}/middlewares/">Middlewares</a>
-                </li>
-                <li {% if page.nav_name == "toolbox" %} class="active" {% endif %}>
-                    <a href="{{ site.url }}/toolbox/">Toolbox</a>
-                </li>
-                <li {% if page.nav_name == "specs" %} class="active" {% endif %}>
-                    <a href="{{ site.url }}/specs/">Conventions</a>
-                </li>
-            </ul>
-            <div class="nav-collapse collapse navbar-responsive-collapse">
-                <ul class="nav navbar-nav" style="margin: 0 auto;">
-
-
+            <div class="standard-navigation">
+                <ul class="nav nav-pills">
+                    <li {% if page.nav_name == "home" %} class="active" {% endif %}>
+                        <a href="{{ site.url }}/">Home</a>
+                    </li>
+                    <li {% if page.nav_name == "middlewares" %} class="active" {% endif %}>
+                        <a href="{{ site.url }}/middlewares/">Middlewares</a>
+                    </li>
+                    <li {% if page.nav_name == "toolbox" %} class="active" {% endif %}>
+                        <a href="{{ site.url }}/toolbox/">Toolbox</a>
+                    </li>
+                    <li {% if page.nav_name == "specs" %} class="active" {% endif %}>
+                        <a href="{{ site.url }}/specs/">Conventions</a>
+                    </li>
                 </ul>
+            </div>
+            <div class="collapsable-navigation">
+                <div class="navbar navbar-fixed-top">
+                    <!--<div class="navbar-inner">-->
+                        <div class="container">
+                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                            <!--
+                            <a class="brand" data-toggle="collapse" data-target=".nav-collapse">
+                                Menu
+                            </a>
+                            -->
+                            <div class="nav-collapse collapse">
+                                <div class="navbar-inner">
+                                    <ul class="nav">
+                                        <li {% if page.nav_name == "home" %} class="active" {% endif %}>
+                                            <a href="{{ site.url }}/">Home</a>
+                                        </li>
+                                        <li {% if page.nav_name == "middlewares" %} class="active" {% endif %}>
+                                            <a href="{{ site.url }}/middlewares/">Middlewares</a>
+                                        </li>
+                                        <li {% if page.nav_name == "toolbox" %} class="active" {% endif %}>
+                                            <a href="{{ site.url }}/toolbox/">Toolbox</a>
+                                        </li>
+                                        <li {% if page.nav_name == "specs" %} class="active" {% endif %}>
+                                            <a href="{{ site.url }}/specs/">Conventions</a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    <!--</div>-->
+                </div>
             </div>
         </div>
 
@@ -43,7 +75,7 @@
                 <h1><a href="{{ site.url }}/">Stack</a></h1>
                 <p class="tagline">Composing <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/HttpKernelInterface.php">HttpKernelInterface</a> middlewares since 2013!</p>
                 <p>
-                    <ul class="nav nav-pills" style="display: inline-block;">
+                    <ul class="nav nav-pills social" style="display: inline-block;">
                         <li>
                             <a href="https://github.com/stackphp"><i class="icon-github"></i> stackphp</a>
                         </li>

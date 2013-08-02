@@ -4,6 +4,9 @@
     visibility: hidden;
 }
 
+.standard-navigation {
+    display: none;
+}
 h2:hover .anchor {
     visibility: visible;
     text-decoration: none;
@@ -159,6 +162,27 @@ ol.conventions .no {
     display: inline-block;
 }
 
+@media (max-width: 399px) {
+    .nav.social {
+        display: block;
+        width: 100%;
+    }
+    .nav.social li {
+        float: none;
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 400px) {
+    .standard-navigation {
+        display: block;
+    }
+
+    .collapsable-navigation {
+        display: none;
+    }
+}
 @media (max-width: 767px) {
     .jumbotron .nav a.btn {
         font-size: 12px;
@@ -177,6 +201,13 @@ ol.conventions .no {
     .conventions-and-protocols div.row-fluid h3,
     .middlewares div.row-fluid h3 {
         margin-top: 20px;
+    }
+
+    .mainContent.stack-nav {
+        margin-top: 0em;
+    }
+    .mainContent.stack-nav ul.nav {
+        margin-top: 1em;
     }
 }
 
