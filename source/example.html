@@ -1,0 +1,46 @@
+---
+layout: default
+title: Example
+nav_name: example
+---
+{% block content %}
+<div class="examples">
+    <h2>Creating middlewares</h2>
+    <p>Creating a new middleware is generally quite easy. The hardest part is grasping the decorator pattern.</p>
+    <p>A decorator is simply an object that wraps around an other object. In this case a middleware is a decorator for <code>HttpKernelInterface</code>. The decorator wraps around a kernel, and exposes the same interface.</p>
+    <p>Let's take a look at an <code>Append</code> middleware, that appends a pre-configured string to all response bodies.</p>
+    <pre><code class="php">{%- filter escape -%}use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
+
+class Append implements HttpKernelInterface
+{
+    protected $app;
+    protected $append;
+
+    public function __construct(HttpKernelInterface $app, $append)
+    {
+        $this->app = $app;
+        $this->append = $append;
+    }
+
+    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+    {
+        $response = $this->app->handle($request, $type, $catch);
+        $response->setContent($response->getContent().$this->append);
+        return $response;
+    }
+}{%- endfilter -%}</code></pre>
+    <p>This middleware takes a kernel in the constructor and delegates to this kernel from within <code>handle</code>. Then it augments the response. It <em>decorates</em> the <code>handle</code> call.</p>
+    <p>Here is an example of how you could use this middleware with Silex. Note that you can replace Silex with any kernel implementation.</p>
+    <pre><code class="php">{%- filter escape -%}$app = new Silex\Application();
+
+$app->get('/', function () {
+    return 'Hello World!';
+});
+
+$app = new Append($app, ' FOO');
+
+Stack\run($app);{%- endfilter -%}</code></pre>
+    <p>This will return a response body of "Hello World! FOO" when accessing the <code>/</code> resource.</p>
+</div>
+{% endblock %}
