@@ -4,29 +4,27 @@ title: Example
 nav_name: example
 ---
 {% block content %}
-<div class="examples">
-    <h2>Creating middlewares</h2>
+<div class="example">
+    <h2>Middlewares</h2>
     <p>Creating a new middleware is generally quite easy. The hardest part is grasping the decorator pattern.</p>
     <p>A decorator is simply an object that wraps around an other object. In this case a middleware is a decorator for <code>HttpKernelInterface</code>. The decorator wraps around a kernel, and exposes the same interface.</p>
-    <p>Let's take a look at an <code>Append</code> middleware, that appends a pre-configured string to all response bodies.</p>
+    <p>Let's take a look at an <code>PoweredByStack</code> middleware, that adds a `X-Powered-By` header to all responses.</p>
     <pre><code class="php">{%- filter escape -%}use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
-class Append implements HttpKernelInterface
+class PoweredByStack implements HttpKernelInterface
 {
-    protected $app;
-    protected $append;
+    private $app;
 
-    public function __construct(HttpKernelInterface $app, $append)
+    public function __construct(HttpKernelInterface $app)
     {
         $this->app = $app;
-        $this->append = $append;
     }
 
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
     {
         $response = $this->app->handle($request, $type, $catch);
-        $response->setContent($response->getContent().$this->append);
+        $response->headers->set('X-Powered-By', 'Stack');
         return $response;
     }
 }{%- endfilter -%}</code></pre>
@@ -38,9 +36,9 @@ $app->get('/', function () {
     return 'Hello World!';
 });
 
-$app = new Append($app, ' FOO');
+$app = new PoweredByStack($app);
 
 Stack\run($app);{%- endfilter -%}</code></pre>
-    <p>This will return a response body of "Hello World! FOO" when accessing the <code>/</code> resource.</p>
+    <p>This will return a "Hello World" body, but have the extra `X-Powered-By: Stack` header.</p>
 </div>
 {% endblock %}
