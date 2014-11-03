@@ -78,3 +78,5 @@ Stack authentication middlewares will be given an opportunity to challenge.
    [Hawk](https://github.com/hueniverse/hawk) authentication middleware.
  * [dflydev/stack-basic-authentication](https://github.com/dflydev/dflydev-stack-basic-authentication)
    HTTP Basic Authentication middleware.
+ * [jsor/stack-jwt](https://github.com/jsor/stack-jwt)
+   JSON Web Token (JWT) authentication middleware. 
