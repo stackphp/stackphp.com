@@ -26,7 +26,7 @@ interpreted as described in [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt).
 ### Identification
 
  * Each proposal MUST have an identifier that MUST follow the format of
-   `STACK-{NUMBER}`. The number SHOULD just the next available number but it MAY
+   `STACK-{NUMBER}`. The number SHOULD just be the next available number but it MAY
    be a special number.
  * Each proposal MUST have a descriptive name that either names the subject of
    the proposal or otherwise succinctly defines the focus of the proposal.
