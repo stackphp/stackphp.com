@@ -48,7 +48,7 @@ valid token.
 
 If a request has authentication credentials that are invalid for any reason a
 Stack authentication middleware MAY either immediately challenge or return
-another reaponse (for example, a 400 error response).
+another response (for example, a 400 error response).
 
 If a request already has the `stack.authn.token` attribute set a Stack
 authentication middleware MUST NOT attempt to further authenticate the request.
