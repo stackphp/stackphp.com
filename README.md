@@ -6,21 +6,24 @@ This repository contains (almost) everything that makes up
 
 Powered by [Sculpin](http://sculpin.io). =)
 
+### Install Composer if not exist.
 
+`curl -s https://getcomposer.org/installer | php`
+
+Or if you don't have curl:
+
+`php -r "readfile('https://getcomposer.org/installer');" | php`
 Build
 -----
 
 ### If You Already Have Composer
 
-    composer install
-    vendor/bin/sculpin generate --watch --server
+`php composer.phar install`
+
+`vendor/bin/sculpin generate --watch --server`
 
 Your newly generated clone of [stackphp.com](http://stackphp.com) is now
-accessible at `http://localhost:8000/`.
+accessible at `http://127.0.0.1:8080/`.
 
-### If You Need Composer
 
-    curl -s https://getcomposer.org/installer | php
-    php composer.phar install
-    vendor/bin/sculpin generate --watch --server
 
