@@ -1,5 +1,5 @@
-Stack Website
-=============
+Stack Website All in One
+========================
 
 This repository contains (almost) everything that makes up
 [stackphp.com](http://stackphp.com).
